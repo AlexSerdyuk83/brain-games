@@ -48,7 +48,7 @@ const getProgression = (start, stop, step) => {
     result.push(i);
     i += step;
   }
-  return result.slice(0, 10);
+  return result.slice(0, 15);
 };
 
 const getValueOfIndex = (progression, index) => {
