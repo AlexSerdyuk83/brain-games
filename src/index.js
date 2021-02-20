@@ -1,10 +1,12 @@
 import { great } from './cli.js';
 import {
   getQuestion, getRandomFloat, getAnswer, isEven, getWrongAnswer, getWinnGame,
-  getOperationForNumber, isEqual, getOpposite, gcd,
+  getOperationForNumber, isEqual, getOpposite, gcd, getProgression,
+  getStringOfProgression, getValueOfIndex, isPrime,
 } from './support-functions.js';
 import {
-  TASKFOREVEN, CORRECT, LIMIT, TASKFORCALC, TASKFORGCD,
+  TASKFOREVEN, CORRECT, LIMIT, TASKFORCALC, TASKFORGCD, TASKFORPROGRESSION,
+  TASKFORPRIME,
 } from './variables.js';
 
 /* In the game 'evenGames' you need to guess an even number or not */
@@ -52,6 +54,7 @@ const calcGames = () => {
   return getWinnGame(name);
 };
 
+/* In the game 'gcdGames' you need to guess the greatest common divisor */
 const gcdGames = () => {
   const name = great();
   console.log(TASKFORGCD);
@@ -73,5 +76,54 @@ const gcdGames = () => {
   return getWinnGame(name);
 };
 
+/* In the game 'progression Games' you need to guess the missing element in the progression */
+const progressionGames = () => {
+  const name = great();
+  console.log(TASKFORPROGRESSION);
+  let i = 0;
+  while (i < LIMIT) {
+    const start = getRandomFloat(1, 50);
+    const stop = getRandomFloat(100, 200);
+    const step = getRandomFloat(1, 5);
+    const index = getRandomFloat(0, 9);
+    const progression = getProgression(start, stop, step);
+    const valueOfIndex = getValueOfIndex(progression, index);
+    const stringOfProgression = getStringOfProgression(progression, index);
+    const question = getQuestion(stringOfProgression);
+    console.log(question);
+    const answer = Number(getAnswer());
+    if (isEqual(valueOfIndex, answer)) {
+      console.log(CORRECT);
+      i += 1;
+    } else {
+      return getWrongAnswer(answer, valueOfIndex, name);
+    }
+  }
+  return getWinnGame(name);
+};
+
+/* In the game 'prime Games' you have to guess a prime number or not */
+const primeGames = () => {
+  const name = great();
+  console.log(TASKFORPRIME);
+  let i = 0;
+  while (i < LIMIT) {
+    const num = getRandomFloat(1, 50);
+    const question = getQuestion(num);
+    console.log(question);
+    const answer = getAnswer();
+    if ((isPrime(num) && answer === 'yes') || (!isPrime(num) && answer === 'no')) {
+      console.log(CORRECT);
+      i += 1;
+    } else {
+      return getWrongAnswer(answer, getOpposite(answer), name);
+    }
+  }
+  return getWinnGame(name);
+};
+
 // eslint-disable-next-line import/prefer-default-export
-export { evenGames, calcGames, gcdGames };
+export {
+  evenGames, calcGames, gcdGames,
+  progressionGames, primeGames,
+};

@@ -10,3 +10,7 @@ brain-even games: https://asciinema.org/a/4Gh3FxllJvAIXKJC9za97v88w
 brain-calc games: https://asciinema.org/a/zM1cOxeM7nRTS2irbnxQfpNn3
 
 brain-gcd games: https://asciinema.org/a/GIZCNh1zt39WMJxV1giX3ReXE
+
+brain-progression games: https://asciinema.org/a/C5WMRYh2Pw7POd8Alqal8hgxO
+
+brain-prime: https://asciinema.org/a/hVwfkGuVxw7QdTyoCxlviNS63

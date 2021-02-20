@@ -41,7 +41,40 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
+const getProgression = (start, stop, step) => {
+  const result = [];
+  let i = start;
+  while (i <= stop) {
+    result.push(i);
+    i += step;
+  }
+  return result.slice(0, 10);
+};
+
+const getValueOfIndex = (progression, index) => {
+  const result = progression.slice(index, index + 1);
+  return Number(result);
+};
+
+const getStringOfProgression = (progression, index) => {
+  const value = '...';
+  progression.splice(index, 1, value);
+  return progression.join(',');
+};
+
+const isPrime = (num) => {
+  let i = 2;
+  while (i < num) {
+    if (num % i === 0) {
+      return false;
+    }
+    i += 1;
+  }
+  return true;
+};
+
 export {
   isEven, getRandomFloat, getQuestion, getAnswer, getWrongAnswer, getWinnGame,
-  getOperationForNumber, isEqual, getOpposite, gcd,
+  getOperationForNumber, isEqual, getOpposite, gcd, getProgression,
+  getStringOfProgression, getValueOfIndex, isPrime,
 };
