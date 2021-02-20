@@ -6,3 +6,5 @@
 [![Actions Status](https://github.com/AlexSerdyuk83/frontend-project-lvl1/workflows/nodejs-lint/badge.svg)](https://github.com/AlexSerdyuk83/frontend-project-lvl1/actions)
 
 brain-even games: https://asciinema.org/a/4Gh3FxllJvAIXKJC9za97v88w
+
+brain-calc games: https://asciinema.org/a/zM1cOxeM7nRTS2irbnxQfpNn3 

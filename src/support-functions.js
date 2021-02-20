@@ -15,15 +15,25 @@ const getAnswer = () => {
   return answer;
 };
 
-const getWrongAnswer = (answer) => {
-  const opposite = answer === 'yes' ? "'no'" : "'yes'";
+const getOpposite = (str) => (str === 'yes' ? "'no'" : "'yes'");
+
+const getWrongAnswer = (answer, result, name) => {
   console.log(`'${answer}' is wrong answer ;(.`);
-  console.log(`Correct answer was ${opposite}.\nLet's try again, Bill!"`);
+  console.log(`Correct answer was ${result}.\nLet's try again, ${name}!"`);
 };
 
 const getWinnGame = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-// eslint-disable-next-line object-curly-newline
-export { isEven, getRandomFloat, getQuestion, getAnswer, getWrongAnswer, getWinnGame };
+const getOperationForNumber = (num1, num2, operator) => {
+  const result = { '+': num1 + num2, '-': num1 - num2, '*': num1 * num2 };
+  return result[operator];
+};
+
+const isEqual = (num1, num2) => num1 === num2;
+
+export {
+  isEven, getRandomFloat, getQuestion, getAnswer, getWrongAnswer, getWinnGame,
+  getOperationForNumber, isEqual, getOpposite,
+};
