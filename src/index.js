@@ -82,10 +82,10 @@ const progressionGames = () => {
   console.log(TASKFORPROGRESSION);
   let i = 0;
   while (i < LIMIT) {
-    const start = getRandomFloat(1, 50);
-    const stop = getRandomFloat(100, 200);
-    const step = getRandomFloat(1, 4);
-    const index = getRandomFloat(0, 14);
+    const start = getRandomFloat(1, 40);
+    const stop = getRandomFloat(60, 100);
+    const step = getRandomFloat(2, 4);
+    const index = getRandomFloat(2, 12);
     const progression = getProgression(start, stop, step);
     const valueOfIndex = getValueOfIndex(progression, index);
     const stringOfProgression = getStringOfProgression(progression, index);
