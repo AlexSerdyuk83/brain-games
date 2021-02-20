@@ -1,8 +1,11 @@
 import readlineSync from 'readline-sync';
+import { WELCOM } from './variables.js';
 
-export const great = () => {
-    const welcome = "Welcome to the Brain Games!";
-    console.log(welcome);
-    const name = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${name}!`);
+const great = () => {
+  console.log(WELCOM);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  return name;
 };
+// eslint-disable-next-line import/prefer-default-export
+export { great };
