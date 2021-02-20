@@ -59,7 +59,7 @@ const getValueOfIndex = (progression, index) => {
 const getStringOfProgression = (progression, index) => {
   const value = '...';
   progression.splice(index, 1, value);
-  return progression.join(',');
+  return progression.join(' ');
 };
 
 const isPrime = (num) => {
