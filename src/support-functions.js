@@ -63,6 +63,9 @@ const getStringOfProgression = (progression, index) => {
 };
 
 const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  }
   let i = 2;
   while (i < num) {
     if (num % i === 0) {
