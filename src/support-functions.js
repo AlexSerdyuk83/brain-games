@@ -33,7 +33,15 @@ const getOperationForNumber = (num1, num2, operator) => {
 
 const isEqual = (num1, num2) => num1 === num2;
 
+const gcd = (a, b) => {
+  if (!b) {
+    return a;
+  }
+
+  return gcd(b, a % b);
+};
+
 export {
   isEven, getRandomFloat, getQuestion, getAnswer, getWrongAnswer, getWinnGame,
-  getOperationForNumber, isEqual, getOpposite,
+  getOperationForNumber, isEqual, getOpposite, gcd,
 };

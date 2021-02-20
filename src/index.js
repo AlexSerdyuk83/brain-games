@@ -1,10 +1,10 @@
 import { great } from './cli.js';
 import {
   getQuestion, getRandomFloat, getAnswer, isEven, getWrongAnswer, getWinnGame,
-  getOperationForNumber, isEqual, getOpposite,
+  getOperationForNumber, isEqual, getOpposite, gcd,
 } from './support-functions.js';
 import {
-  TASKFOREVEN, CORRECT, LIMIT, TASKFORCALC,
+  TASKFOREVEN, CORRECT, LIMIT, TASKFORCALC, TASKFORGCD,
 } from './variables.js';
 
 /* In the game 'evenGames' you need to guess an even number or not */
@@ -52,5 +52,26 @@ const calcGames = () => {
   return getWinnGame(name);
 };
 
+const gcdGames = () => {
+  const name = great();
+  console.log(TASKFORGCD);
+  let i = 0;
+  while (i < LIMIT) {
+    const firstNum = getRandomFloat(1, 50);
+    const secondNum = getRandomFloat(50, 100);
+    const result = gcd(firstNum, secondNum);
+    const question = getQuestion(`${firstNum} ${secondNum}`);
+    console.log(question);
+    const answer = Number(getAnswer());
+    if (isEqual(result, answer)) {
+      console.log(CORRECT);
+      i += 1;
+    } else {
+      return getWrongAnswer(answer, result, name);
+    }
+  }
+  return getWinnGame(name);
+};
+
 // eslint-disable-next-line import/prefer-default-export
-export { evenGames, calcGames };
+export { evenGames, calcGames, gcdGames };
