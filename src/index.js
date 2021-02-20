@@ -83,7 +83,7 @@ const progressionGames = () => {
   let i = 0;
   while (i < LIMIT) {
     const start = getRandomFloat(1, 80);
-    const stop = getRandomFloat(60, 150);
+    const stop = getRandomFloat(150, 230);
     const step = getRandomFloat(2, 5);
     const index = getRandomFloat(3, 14);
     const progression = getProgression(start, stop, step);
