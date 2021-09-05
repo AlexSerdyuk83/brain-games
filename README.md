@@ -7,10 +7,6 @@
 
 [![Actions Status](https://github.com/AlexSerdyuk83/frontend-project-lvl1/workflows/nodejs-lint/badge.svg)](https://github.com/AlexSerdyuk83/frontend-project-lvl1/actions)
 
-### Getting started
-
-```sudo npm install -g frontend-victorlitvinenko-lvl1```
-
 ### Even numbers
 
 ```brain-even```
